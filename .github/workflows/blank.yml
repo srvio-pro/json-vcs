@@ -39,6 +39,18 @@ jobs:
       - DNS: {{ secrets.DNS }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+
+      - name: Create Port
+        inputs: []
+        run: 'PORT: 234'
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Install Dependencies
+        run: | 
+          echo "install action" 
+      # npm install
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
